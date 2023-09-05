@@ -16,7 +16,7 @@
                         <div class="table-responsive">
                             @if (Session::has('success_message'))
                                          <div class="alert alert-success">
-                                            <strong>Success: {{ Session::get('success_message') }}</strong>
+                                              <strong>Success | {{ Session::get('success_message') }}</strong>
                                          </div>
                                         
                                     @endif

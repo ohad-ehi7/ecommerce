@@ -22,18 +22,7 @@
                 </div> 
             </li>
             @endforeach
-            {{-- <li>
-                <div class="shopping-cart-img">
-                    <a href="product-details.html"><img alt="Surfside Media" src="{{ asset('assets/imgs/shop/thumbnail-2.jpg')}}p"></a>
-                </div>
-                <div class="shopping-cart-title">
-                    <h4><a href="product-details.html">Corduroy Shirts</a></h4>
-                    <h4><span>1 × </span>$3200.00</h4>
-                </div>
-                <div class="shopping-cart-delete">
-                    <a href="#"><i class="fi-rs-cross-small"></i></a>
-                </div>
-            </li> --}}
+             
         </ul>
         <div class="shopping-cart-footer">
             <div class="shopping-cart-total">

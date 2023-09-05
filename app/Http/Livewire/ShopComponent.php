@@ -21,7 +21,8 @@ class ShopComponent extends Component
       
      Cart::instance('cart')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
      session()->flash('success_message','Item added in cart');
-     return redirect()->route('shop.cart');
+     $this->emitTo('cart-icon-component','refreshComponent'); 
+    return redirect()->route('shop.cart');
 
     }
     public function changeSizePage($size){
@@ -36,7 +37,7 @@ class ShopComponent extends Component
           $this->emitTo('wishlist-icon-component','refreshComponent');
     }
     public function removeFromWishlist($product_id){
-        foreach(Cart::instance('wishlist')->remove() as $witem){
+        foreach(Cart::instance('wishlist')->content() as $witem){
             if($witem->id==$product_id){
                 Cart::instance('wishlist')->remove($witem->rowId);
           $this->emitTo('wishlist-icon-component','refreshComponent');
