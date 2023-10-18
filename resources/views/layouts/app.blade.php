@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ecommerce Media </title>
+    <title>Ecommerce</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -421,8 +421,8 @@
                                         @if( Auth::user()->utype == 'ADM' )
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                            <li><a href="#">Products</a></li>
-                                            <li><a href="{{ route('admin.categories') }}">Categories</a></li>
+                                            <li><a href="{{ route('admin.products') }}">Products</a></li>
+                                            <li><a href="{{ route('admin.categories')}}">Categories</a></li>
                                             <li><a href="#">Coupons</a></li>
                                             <li><a href="#">Orders</a></li>
                                             <li><a href="#">Customers</a></li>
