@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
 use Illuminate\Support\Str;
-use App\Models\Product;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Carbon;
 
 class AdminAddProductComponent extends Component
 {
@@ -48,7 +49,7 @@ class AdminAddProductComponent extends Component
         $product->description = $this->description;
         $product->regular_price = $this->regular_price;
         $product->sale_price = $this->sale_price;
-        $product->sku = $this->suk;
+        $product->sku = $this->sku;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
