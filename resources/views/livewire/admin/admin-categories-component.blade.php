@@ -40,8 +40,10 @@
                                 <thead>
                                     <tr>
                                     <th>#</th>
+                                    <th>image</th>
                                     <th>Name</th>
                                     <th>Slug</th>
+                                    <th>Popular</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -52,9 +54,10 @@
                                     @foreach ($categories as $category )
                                         <tr>
                                             <td>{{++$i}}</td>
+                                            <td><img src="{{asset('assets/imgs/categories')}}/{{ $category->image }}" width="60"></td>
                                             <td>{{$category->name}}</td>
                                             <td>{{$category->slug}}</td>
-                                           
+                                           <td>{{ $category->is_popular == 1 ? 'Yes':'No'  }}</td>
                                             <td>
                                                 <a href="{{ route('admin.category.edit',['category_id'=>$category->id]) }}" class="text-info" style="margin-left: 30px" title="Edit">
                                                     <i class="fi-rs-pencil"></i>

@@ -98,7 +98,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="index.html"><img src="{{ asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
+                        <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
@@ -418,11 +418,12 @@
                                     @auth
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
 
-                                        @if( Auth::user()->utype == 'ADM' )
+                                        @if( Auth::user()->utype == 'ADM' )  
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                             <li><a href="{{ route('admin.products') }}">Products</a></li>
                                             <li><a href="{{ route('admin.categories')}}">Categories</a></li>
+                                            <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li>
                                             <li><a href="#">Coupons</a></li>
                                             <li><a href="#">Orders</a></li>
                                             <li><a href="#">Customers</a></li>
@@ -443,7 +444,7 @@
                         </div>
                     </div>
                     <div class="hotline d-none d-lg-block">
-                        <p><i class="fi-rs-smartphone"></i><span>Toll Free</span> (+1) 0000-000-000 </p>
+                        <p><i class="fi-rs-smartphone"></i><span>Toll Free</span> (+509)49959780  </p>
                     </div>
                     <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%
                     </p>
@@ -518,7 +519,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="index.html"><img src="{{ asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
+                    <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -562,7 +563,7 @@
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                    href="index.html">Home</a></li>
+                                    href="/">Home</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                     href="shop.html">shop</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our
@@ -671,7 +672,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="widget-about font-md mb-md-5 mb-lg-0">
                             <div class="logo logo-width-1 wow fadeIn animated">
-                                <a href="index.html"><img src="{{ asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
+                                <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
                             <p class="wow fadeIn animated">

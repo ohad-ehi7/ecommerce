@@ -69,7 +69,8 @@
                                                     <i class="fi-rs-pencil"></i>
                                                 </a>
                                                 <a href="#" class=" text-danger" onclick="deleteConfirmation({{$product->id }})"  style="margin-left: 30px" title="Delete"> <i class="fi-rs-trash"></i></a>
-                                                <a href="#" class=" text-success" onclick="productDetails({{$product->id }})"    style="margin-left: 30px" title="Details"> <i class="fi-rs-eye"></i></a>
+                                                <a href="#" class="text-success" wire:click="loadProductDetails({{$product->id}})"style="margin-left: 30px" title="Details"><i class="fi-rs-eye"></i></a>
+
                                             </td>
                                                 
                                             </td>
@@ -113,28 +114,20 @@
                         <h4 class="pb-3">Product Details</h4>
                     </div>
                 </div>
+                
                 <div class="row">
-                    <div class="col-md-12">
-                        <ul>
-                            <li><strong>Name:</strong> <span id="productName"></span></li>
-                            <li><strong>Slug:</strong> <span id="productSlug"></span></li>
-                            <li><strong>Short Description:</strong> <span id="productShortDescription"></span></li>
-                            <li><strong>Description:</strong> <span id="productDescription"></span></li>
-                            <li><strong>Regular Price:</strong> <span id="productRegularPrice"></span></li>
-                            <li><strong>Sale Price:</strong> <span id="productSalePrice"></span></li>
-                            <li><strong>SKU:</strong> <span id="productSKU"></span></li>
-                            <li><strong>Stock Status:</strong> <span id="productStockStatus"></span></li>
-                            <li><strong>Featured:</strong> <span id="productFeatured"></span></li>
-                            <li><strong>Quantity:</strong> <span id="productQuantity"></span></li>
-                            <li><strong>Category ID:</strong> <span id="productCategoryID"></span></li>
-                        </ul>
+                    <div class="col-md-4">
+                        <img  src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="{{ $product->name }}" width="120">
+                        {{-- <img src="{{ asset('assets/imgs/products/' . $product->image) }}" alt=""> --}}
+                    </div>
+                    <div class="col-md-8">
+                        <h5>{{ $product->name }}</h5>
+                        <p>{{ $product->description }}</p>
+                        <p>Price: ${{ $product->regular_price }}</p>
+                        <!-- Add more details as needed -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <img id="productImage" src="" alt="Product Image">
-                    </div>
-                </div>
+                
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -158,10 +151,12 @@
    }
 </script>
 <script>
-    function productDetails(id){
-        @this.set('product_id',id);
+    document.addEventListener('livewire:load', function () {
+    Livewire.on('showProductDetailsModal', function () {
         $('#productDetails').modal('show');
-    } 
+    });
+});
+
  
    
  </script>

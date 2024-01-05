@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <label for="sku" class="form-label">SKU</label>
-                                        <input type="text" name="sku" class="form-control" placeholder="Enter Product SUK"
+                                        <input type="text" name="sku" class="form-control" placeholder="Enter Product SKU"
                                             wire:model="sku">
                                         @error('sku')
                                         <p class="text-danger">{{ $message }}</p>
@@ -114,8 +114,8 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <label for="featured" class="form-label"wire:model="featured">Featured</label>
-                                        <select class="form-controle" name="featured" >
+                                        <label for="featured" class="form-label" >Featured</label>
+                                        <select class="form-controle" name="featured" wire:model="featured" >
                                             <option value="0">No</option>
                                             <option value="1">Yes</option>
                                         </select>
